@@ -15,6 +15,7 @@ import {
   DropdownItem,
   Avatar,
   Divider,
+  NavbarBrand,
 } from "@nextui-org/react";
 import NextLink from "next/link";
 import NextImage from "next/image";
@@ -26,23 +27,24 @@ import SheetItems from "./SheetItems";
 
 export default function Nav() {
   return (
-    <Navbar position="static" className="bg-dark02">
-      <NavbarContent justify="start">
-        <NavbarItem>
-          <Sheet>
-            <SheetTrigger asChild>
-              <Button isIconOnly variant="light">
-                <HamburgerMenuIcon className="h-4 w-4" />
-              </Button>
-            </SheetTrigger>
+    <Navbar
+      position="static"
+      className="bg-dark02"
+      classNames={{ wrapper: "p-2.5 md:px-4 md:py-0" }}
+    >
+      <NavbarBrand>
+        <Sheet>
+          <SheetTrigger asChild>
+            <HamburgerMenuIcon className="h-4 w-4" />
+          </SheetTrigger>
 
-            {/* sheet items */}
-            <SheetItems />
-          </Sheet>
-        </NavbarItem>
-      </NavbarContent>
+          {/* sheet items */}
+          <SheetItems />
+        </Sheet>
+        <h1 className="font-semibold text-base ml-2.5">weframetech</h1>
+      </NavbarBrand>
       <NavbarContent
-        className="hidden sm:flex gap-4 flex-grow"
+        className="hidden sm:flex gap-0 sm:gap-4 flex-grow"
         justify="center"
       >
         <NavbarItem>
@@ -76,7 +78,7 @@ export default function Nav() {
             Other Items
           </Link>
         </NavbarItem>
-        <NavbarItem className="hidden md:flex items-center justify-center gap-2.5 lg:gap-6">
+        <NavbarItem className="hidden lg:flex items-center justify-center gap-2.5 lg:gap-6">
           <Badge
             size="sm"
             className="bg-accent01 text-black font-semibold"
@@ -157,7 +159,7 @@ export default function Nav() {
                     src="/Icons/arrow.svg"
                     width={100}
                     height={100}
-                    className="w-2.5 h-2.5 rounded-full"
+                    className="min-h-[0.5rem] min-w-[0.5rem] w-2.5 h-2.5 rounded-full"
                     alt="arrowDown"
                   />
                 }
@@ -176,26 +178,33 @@ export default function Nav() {
           </Dropdown>
         </NavbarItem>
       </NavbarContent>
-      <NavbarContent justify="end">
+      <NavbarContent justify="end" className="gap-0 sm:gap-4">
         <NavbarItem className="h-full py-3">
           <Divider
             orientation="vertical"
             className="hidden md:block bg-dark04 w-[0.0625rem]"
           />
         </NavbarItem>
-        <NavbarItem className="">
-          <div className="flex items-center gap-2">
-            <Avatar
-              showFallback
-              size="sm"
-              src="https://images.unsplash.com/broken"
-              radius="lg"
-            />
-            <div className="flex flex-col font-bold">
-              <h1 className="text-base">Instructor Day</h1>
-              <p className="text-sm font-normal text-[#7879F1]">Super Admin</p>
-            </div>
+        <NavbarItem className="flex items-center gap-2">
+          <Avatar
+            showFallback
+            size="sm"
+            src="https://images.unsplash.com/broken"
+            radius="md"
+          />
+          <div className="flex flex-col font-bold">
+            <h1 className="text-sm sm:text-base">Instructor Day</h1>
+            <p className="text-xs sm:text-sm font-normal text-[#7879F1]">
+              Super Admin
+            </p>
           </div>
+          <Image
+            src="/Icons/arrow.svg"
+            width={100}
+            height={100}
+            className="min-h-[0.5rem] min-w-[0.5rem] w-4 h-4 md:w-5 md:h-5 rounded-full"
+            alt="arrow"
+          />
         </NavbarItem>
       </NavbarContent>
     </Navbar>

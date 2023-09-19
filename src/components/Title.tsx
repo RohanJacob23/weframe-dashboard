@@ -12,7 +12,7 @@ import NextImage from "next/image";
 
 export default function Title() {
   return (
-    <section className="flex flex-col gap-4 xl:gap-0 md:flex-row justify-between bg-dark02 rounded-[0.875rem] min-h-[12rem] p-2.5 sm:p-7">
+    <section className="flex flex-col gap-4 xl:gap-0 lg:flex-row justify-between bg-dark02 rounded-[0.875rem] min-h-[12rem] p-4 sm:p-7">
       {/* first part */}
       <div className="flex flex-col justify-evenly">
         <div>
@@ -34,8 +34,7 @@ export default function Title() {
             Created by Instructor Day on November 31, 2022
           </p>
         </div>
-        {/* <div className="flex flex-col space-y-2 mt-2 xl:mt-0 xl:flex-row xl:items-center xl:space-x-5"> */}
-        <div className="grid grid-cols-2 gap-2.5 xl:grid-flow-col xl:space-x-5 mt-4 xl:mt-0">
+        <div className="flex flex-wrap mt-2 gap-5 xl:mt-0 xl:flex-row xl:items-center">
           <AvatarGroup
             isBordered
             max={4}
@@ -122,21 +121,21 @@ export default function Title() {
 
       {/* third part */}
       <div className="flex flex-col justify-evenly xl:grow">
-        <div className="flex items-center justify-end gap-4">
+        <div className="hidden lg:flex items-center justify-end gap-4">
           <div className="text-end space-y-1">
             <h1 className="text-base sm:text-lg font-bold">
               Centered Martial Arts
             </h1>
             <p className="text-xs sm:text-sm text-[#A5A5A5]">Sunnyvale, Ca</p>
           </div>
-          <div className="w-11 h-11 bg-white rounded-[0.875rem] p-1">
+          <div className="flex items-center justify-center w-11 h-11 bg-white rounded-[0.875rem] p-1">
             <Image
               as={NextImage}
               src="/Icons/logo1.svg"
               width={100}
               height={100}
               alt="chartIcon"
-              className="w-full h-full"
+              className="min-h-[1rem] min-w-[1rem] w-full h-full"
             />
           </div>
           <Image
@@ -149,8 +148,8 @@ export default function Title() {
           />
         </div>
 
-        <div className="flex items-center justify-evenly w-full md:justify-end space-x-2.5 md:space-x-7">
-          <h1 className="text-xs sm:text-base font-semibold">
+        <div className="flex items-center justify-start w-full lg:justify-end space-x-2.5 lg:space-x-7">
+          <h1 className="text-xs sm:text-base font-semibold w-32 md:w-auto">
             Total Progress 60%
           </h1>
           <Progress
@@ -159,7 +158,7 @@ export default function Title() {
             size="sm"
             className="max-w-[16.125rem] h-3.5 mt-3"
             classNames={{
-              indicator: "bg-[#6418C3]",
+              indicator: "bg-[#6418c3]",
             }}
           />
         </div>

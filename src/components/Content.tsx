@@ -147,7 +147,7 @@ export default function Content() {
                     value={30}
                     aria-label={badge}
                     className="h-[0.4375rem]"
-                    classNames={{ indicator: `bg-${colorName}` }}
+                    classNames={{ indicator: `bg-[${color}]` }}
                   />
                 </CardBody>
                 <CardFooter className="justify-between items-center pb-7">
@@ -190,6 +190,31 @@ export default function Content() {
           </div>
         </div>
       ))}
+
+      <div className="flex flex-col min-w-[16rem] md:min-w-[20rem]">
+        <div className="flex items-center justify-between">
+          <h1>Revised (0)</h1>
+          <Button isIconOnly className="bg-figmaPrimary">
+            <Image
+              as={NextImage}
+              src="/Icons/plus.png"
+              width={100}
+              height={100}
+              alt="add"
+              className="w-5 h-5"
+            />
+          </Button>
+        </div>
+        <div className="flex flex-col mt-4 gap-5">
+          <Card className="max-w-[400px] bg-[#211A75] p-5">
+            <CardBody className="bg-dark02 border-2 border-dashed border-Iris/80 rounded-[0.875rem] text-center">
+              <p className="text-Iris/80 text-base font-semibold">
+                Move card here
+              </p>
+            </CardBody>
+          </Card>
+        </div>
+      </div>
     </section>
   );
 }

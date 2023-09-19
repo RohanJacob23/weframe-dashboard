@@ -2,7 +2,7 @@
 
 import React from "react";
 import { SheetContent, SheetHeader, SheetTitle } from "@/components/ui/sheet";
-import { Image } from "@nextui-org/react";
+import { Badge, Image, Input } from "@nextui-org/react";
 import NextImage from "next/image";
 
 export default function SheetItems() {
@@ -151,17 +151,106 @@ export default function SheetItems() {
   return (
     <>
       {/* @ts-ignore */}
-      <SheetContent className="bg-dark02" side="left">
+      <SheetContent className="bg-dark02 w-full overflow-auto" side="left">
         <SheetHeader className="items-center">
-          <SheetTitle>Weframetech</SheetTitle>
+          <SheetTitle className="text-xl">Weframetech</SheetTitle>
         </SheetHeader>
-        <h1 className="text-base font-bold text-[#C7C7C7] mt-4">Main Menu</h1>
+        <div>
+          <Input
+            type="text"
+            classNames={{
+              inputWrapper: ["bg-[#211A75]", "data-[hover=true]:bg-[#211A75]"],
+            }}
+            placeholder="Search..."
+            radius="full"
+            className="mt-4"
+            startContent={
+              <Image
+                src="/Icons/search2.svg"
+                as={NextImage}
+                width={100}
+                height={100}
+                className="min-h-[1rem] min-w-[1rem] w-5 h-5"
+                alt="search"
+              />
+            }
+          />
+          <div className="flex items-center justify-between gap-2.5 lg:gap-6 my-6">
+            <Badge
+              size="sm"
+              className="bg-accent01 text-black font-semibold"
+              content={12}
+            >
+              <Image
+                src="/Icons/bell1.svg"
+                priority={true}
+                as={NextImage}
+                width={100}
+                height={100}
+                className="w-5 h-5"
+                alt="bell"
+              />
+            </Badge>
+
+            <Badge
+              size="sm"
+              className="bg-accent01 text-black font-semibold"
+              content={5}
+            >
+              <Image
+                src="/Icons/VideoLesson2.svg"
+                as={NextImage}
+                width={100}
+                height={100}
+                className="w-5 h-5"
+                alt="search"
+              />
+            </Badge>
+            <Badge
+              size="sm"
+              className="bg-accent01 text-black font-semibold"
+              content={2}
+            >
+              <Image
+                src="/Icons/checkbox1.svg"
+                as={NextImage}
+                width={100}
+                height={100}
+                className="w-5 h-5"
+                alt="search"
+              />
+            </Badge>
+            <Badge
+              size="sm"
+              className="bg-accent02 text-black font-semibold"
+              content="!"
+            >
+              <Image
+                src="/Icons/office1.svg"
+                as={NextImage}
+                width={100}
+                height={100}
+                className="w-5 h-5"
+                alt="search"
+              />
+            </Badge>
+          </div>
+        </div>
+        <h1 className="text-xl font-bold text-[#C7C7C7] mt-4">Main Menu</h1>
         <div className="grid gap-4 py-4 space-y-2">
           {menuItem.map(({ icon, submenu, title }, i) => (
             <div key={i} className="flex items-center justify-between">
               <div className="flex items-center gap-6">
                 {icon}
-                <h1 className="text-lg font-semibold text-Iris/80">{title}</h1>
+                <h1
+                  className={`text-base font-semibold ${
+                    title === "Dashboard" || title === "Email"
+                      ? "text-[#464366]"
+                      : "text-Iris/80"
+                  }`}
+                >
+                  {title}
+                </h1>
               </div>
               {submenu && (
                 <Image
