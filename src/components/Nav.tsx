@@ -35,7 +35,7 @@ export default function Nav() {
       <NavbarBrand>
         <Sheet>
           <SheetTrigger asChild>
-            <HamburgerMenuIcon className="h-4 w-4" />
+            <HamburgerMenuIcon className="h-4 w-4 lg:hidden block" />
           </SheetTrigger>
 
           {/* sheet items */}

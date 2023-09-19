@@ -153,7 +153,7 @@ export default function SheetItems() {
       {/* @ts-ignore */}
       <SheetContent className="bg-dark02 w-full overflow-auto" side="left">
         <SheetHeader className="items-center">
-          <SheetTitle className="text-xl">Weframetech</SheetTitle>
+          <SheetTitle className="text-lg lg:text-2xl">Weframetech</SheetTitle>
         </SheetHeader>
         <div>
           <Input
@@ -164,6 +164,7 @@ export default function SheetItems() {
             placeholder="Search..."
             radius="full"
             className="mt-4"
+            autoFocus={false}
             startContent={
               <Image
                 src="/Icons/search2.svg"
