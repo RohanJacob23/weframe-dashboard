@@ -74,6 +74,11 @@
     @apply bg-background text-foreground;
   }
 
+  .blueCard {
+    border-radius: 2rem;
+    background: linear-gradient(139deg, #076ecd 23.19%, #1cbbff 102.24%);
+  }
+
   /* scrollbar style */
   /* Firefox */
   * {

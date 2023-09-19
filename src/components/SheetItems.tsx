@@ -4,6 +4,7 @@ import React from "react";
 import { SheetContent, SheetHeader, SheetTitle } from "@/components/ui/sheet";
 import { Badge, Image, Input } from "@nextui-org/react";
 import NextImage from "next/image";
+import SidebarCard from "./SidebarCard";
 
 export default function SheetItems() {
   const menuItem = [
@@ -266,6 +267,7 @@ export default function SheetItems() {
             </div>
           ))}
         </div>
+        <SidebarCard />
       </SheetContent>
     </>
   );

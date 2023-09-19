@@ -1,8 +1,9 @@
 "use client";
 
 import React from "react";
-import { Badge, Image, Input } from "@nextui-org/react";
+import { Badge, Image } from "@nextui-org/react";
 import NextImage from "next/image";
+import SidebarCard from "./SidebarCard";
 
 export default function SideNav() {
   const menuItem = [
@@ -183,6 +184,7 @@ export default function SideNav() {
             </div>
           ))}
         </div>
+        <SidebarCard />
       </div>
     </section>
   );
