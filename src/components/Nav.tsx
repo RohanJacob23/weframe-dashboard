@@ -35,16 +35,18 @@ export default function Nav() {
       <NavbarBrand>
         <Sheet>
           <SheetTrigger asChild>
-            <HamburgerMenuIcon className="h-4 w-4 lg:hidden block" />
+            <HamburgerMenuIcon className="h-4 w-4 block xl:hidden" />
           </SheetTrigger>
 
           {/* sheet items */}
           <SheetItems />
         </Sheet>
-        <h1 className="font-semibold text-base ml-2.5">weframetech</h1>
+        <h1 className="font-semibold text-base ml-2.5 block xl:hidden">
+          weframetech
+        </h1>
       </NavbarBrand>
       <NavbarContent
-        className="hidden sm:flex gap-0 sm:gap-4 flex-grow"
+        className="hidden sm:flex gap-0 sm:gap-4 flex-grow xl:ml-36"
         justify="center"
       >
         <NavbarItem>

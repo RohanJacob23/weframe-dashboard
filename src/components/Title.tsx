@@ -12,7 +12,7 @@ import NextImage from "next/image";
 
 export default function Title() {
   return (
-    <section className="flex flex-col gap-4 xl:gap-0 lg:flex-row justify-between bg-dark02 rounded-[0.875rem] min-h-[12rem] p-4 sm:p-7">
+    <section className="flex flex-col gap-4 lg:flex-row justify-between bg-dark02 rounded-[0.875rem] min-h-[12rem] p-4 sm:p-7">
       {/* first part */}
       <div className="flex flex-col justify-evenly">
         <div>
@@ -155,8 +155,8 @@ export default function Title() {
           <Progress
             aria-label="Loading..."
             value={60}
-            size="sm"
-            className="max-w-[16.125rem] h-3.5 mt-3"
+            size="md"
+            className="max-w-[16.125rem] h-3.5"
             classNames={{
               indicator: "bg-[#6418c3]",
             }}
