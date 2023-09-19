@@ -12,7 +12,7 @@ import NextImage from "next/image";
 
 export default function Title() {
   return (
-    <section className="flex bg-dark02 rounded-[0.875rem] h-48 p-7">
+    <section className="flex flex-col gap-4 xl:gap-0 md:flex-row justify-between bg-dark02 rounded-[0.875rem] min-h-[12rem] p-2.5 sm:p-7">
       {/* first part */}
       <div className="flex flex-col justify-evenly">
         <div>
@@ -26,14 +26,24 @@ export default function Title() {
               alt="backButton"
             />
 
-            <h1 className="text-2xl font-bold">School November Tasks</h1>
+            <h1 className="text-lg lg:text-xl xl:text-2xl font-bold">
+              School November Tasks
+            </h1>
           </div>
-          <p className="text-[#A5A5A5] text-sm">
+          <p className="text-[#A5A5A5] text-xs xl:text-sm">
             Created by Instructor Day on November 31, 2022
           </p>
         </div>
-        <div className="flex items-center space-x-5">
-          <AvatarGroup isBordered max={4} total={6} color="primary" size="sm">
+        {/* <div className="flex flex-col space-y-2 mt-2 xl:mt-0 xl:flex-row xl:items-center xl:space-x-5"> */}
+        <div className="grid grid-cols-2 gap-2.5 xl:grid-flow-col xl:space-x-5 mt-4 xl:mt-0">
+          <AvatarGroup
+            isBordered
+            max={4}
+            total={6}
+            color="primary"
+            size="sm"
+            className="col-span-2"
+          >
             <Avatar
               size="sm"
               showFallback
@@ -80,7 +90,7 @@ export default function Title() {
                 src="/Icons/add-friend1.svg"
                 width={100}
                 height={100}
-                className="h-5 w-5"
+                className="min-h-[1rem] min-w-[1rem] h-5 w-5"
                 alt="backButton"
               />
             }
@@ -100,7 +110,7 @@ export default function Title() {
                 src="/Icons/chat1.svg"
                 width={100}
                 height={100}
-                className="h-5 w-5"
+                className="min-h-[1rem] min-w-[1rem] h-5 w-5"
                 alt="backButton"
               />
             }
@@ -111,11 +121,13 @@ export default function Title() {
       </div>
 
       {/* third part */}
-      <div className="flex flex-col justify-evenly grow">
+      <div className="flex flex-col justify-evenly xl:grow">
         <div className="flex items-center justify-end gap-4">
           <div className="text-end space-y-1">
-            <h1 className="text-lg font-bold">Centered Martial Arts</h1>
-            <p className="text-sm text-[#A5A5A5]">Sunnyvale, Ca</p>
+            <h1 className="text-base sm:text-lg font-bold">
+              Centered Martial Arts
+            </h1>
+            <p className="text-xs sm:text-sm text-[#A5A5A5]">Sunnyvale, Ca</p>
           </div>
           <div className="w-11 h-11 bg-white rounded-[0.875rem] p-1">
             <Image
@@ -137,8 +149,10 @@ export default function Title() {
           />
         </div>
 
-        <div className="flex items-center justify-end space-x-7">
-          <h1 className="text-base font-semibold">Total Progress 60%</h1>
+        <div className="flex items-center justify-evenly w-full md:justify-end space-x-2.5 md:space-x-7">
+          <h1 className="text-xs sm:text-base font-semibold">
+            Total Progress 60%
+          </h1>
           <Progress
             aria-label="Loading..."
             value={60}

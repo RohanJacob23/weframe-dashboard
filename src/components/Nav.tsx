@@ -59,24 +59,24 @@ export default function Nav() {
                 as={NextImage}
                 width={100}
                 height={100}
-                className="w-5 h-5"
+                className="min-h-[1rem] min-w-[1rem] w-5 h-5"
                 alt="search"
               />
             }
           />
         </NavbarItem>
-        <NavbarItem>
+        <NavbarItem className="hidden md:flex">
           <Link
             as={NextLink}
             href="#"
             underline="always"
             size="sm"
-            className="text-sm text-figmaPrimary font-bold ml-4 uppercase"
+            className="text-sm text-figmaPrimary font-bold lg:ml-4 uppercase"
           >
             Other Items
           </Link>
         </NavbarItem>
-        <NavbarItem className="flex items-center justify-center gap-6">
+        <NavbarItem className="hidden md:flex items-center justify-center gap-2.5 lg:gap-6">
           <Badge
             size="sm"
             className="bg-accent01 text-black font-semibold"
@@ -148,7 +148,7 @@ export default function Nav() {
                     src="/Icons/united-states1.svg"
                     width={100}
                     height={100}
-                    className="w-5 h-5 rounded-full"
+                    className="min-h-[1rem] min-w-[1rem] w-5 h-5 rounded-full"
                     alt="unitedStatesFlag"
                   />
                 }
@@ -178,7 +178,10 @@ export default function Nav() {
       </NavbarContent>
       <NavbarContent justify="end">
         <NavbarItem className="h-full py-3">
-          <Divider orientation="vertical" className="bg-dark04 w-[0.0625rem]" />
+          <Divider
+            orientation="vertical"
+            className="hidden md:block bg-dark04 w-[0.0625rem]"
+          />
         </NavbarItem>
         <NavbarItem className="">
           <div className="flex items-center gap-2">

@@ -90,14 +90,21 @@ export default function Content() {
           color: "#E328AF",
           colorName: "accent02",
         },
+        {
+          id: 4,
+          badge: "Instructor Meeting",
+          title: "Review/correct yellow belt techniques.",
+          color: "#E328AF",
+          colorName: "accent02",
+        },
       ],
     },
   ];
   return (
-    <section className="flex space-x-6 mt-7">
+    <section className="flex space-x-6 mt-7 overflow-auto pb-4">
       {boardList.map(({ id, tasks, title }) => (
         // columns
-        <div key={id} className="flex flex-col w-72">
+        <div key={id} className="flex flex-col min-w-[16rem] md:min-w-[20rem]">
           <div className="flex items-center justify-between">
             <h1>{title}</h1>
             <Button isIconOnly className="bg-figmaPrimary">
@@ -107,7 +114,7 @@ export default function Content() {
                 width={100}
                 height={100}
                 alt="add"
-                className="w-5 h-4"
+                className="w-5 h-5"
               />
             </Button>
           </div>
@@ -115,7 +122,7 @@ export default function Content() {
           {/* card rows */}
           <div className="flex flex-col mt-4 gap-5">
             {tasks.map(({ id, badge, title, color, colorName }) => (
-              <Card key={id} className="bg-[#211A75] max-w-xs">
+              <Card key={id} className="bg-[#211A75] w-full max-w-xs">
                 <CardHeader className="flex items-center justify-between pb-0 px-5">
                   <div className="flex items-center space-x-3">
                     <span
@@ -134,8 +141,8 @@ export default function Content() {
                     className="h-5 w-5 rotate-90"
                   />
                 </CardHeader>
-                <CardBody className="pt-3">
-                  <p className="font-semibold text-lg">{title}</p>
+                <CardBody className="pt-3 space-y-2.5">
+                  <p className="font-semibold text-base md:text-lg">{title}</p>
                   <Progress
                     value={30}
                     aria-label={badge}
@@ -173,7 +180,7 @@ export default function Content() {
                       height={100}
                       className="h-5 w-5"
                     />
-                    <p className="text-[#A5A5A5] font-semibold text-sm">
+                    <p className="text-[#A5A5A5] font-semibold text-xs md:text-sm">
                       Due in 4 Days
                     </p>
                   </div>
